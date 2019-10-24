@@ -1,0 +1,29 @@
+NavigationLayout:
+    MDNavigationDrawer:
+        NavigationDrawerIconButton:
+            text: "Screen 1"
+            on_release:
+                screen_manager.current = "screen1"
+        NavigationDrawerIconButton:
+            text: "Screen 2"
+            on_release:
+                screen_manager.current = "screen2"
+    BoxLayout:
+        orientation: 'vertical'
+        MDToolbar:
+            title: "Your app"
+            md_bg_color: app.theme_cls.primary_color
+            left_action_items: [['menu', lambda x: root.toggle_nav_drawer()]]
+        ScreenManager:
+            id: screen_manager
+            Screen:
+                name: "screen1"
+                MDLabel:
+                    text: "Screen 1"
+            Screen:
+                name: "screen2"
+                MDLabel:
+                    text: "Screen 2"
+
+
+
